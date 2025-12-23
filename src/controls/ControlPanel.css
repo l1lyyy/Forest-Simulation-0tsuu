@@ -1,0 +1,275 @@
+.control-panel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 400px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.control-section {
+    margin-bottom: 28px;
+}
+
+.control-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    color: #4fc3f7;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Time Control */
+.time-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.time-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    background: #2a2a3e;
+    color: #b0b0b0;
+}
+
+.time-btn.active {
+    background: #1976d2;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.4);
+}
+
+.time-btn:not(.active):hover {
+    background: #3a3a4e;
+    color: #ffffff;
+}
+
+.time-icon {
+    font-size: 20px;
+}
+
+.time-display {
+    background: #0f0f1a;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.time-phase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #9c27b0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.time-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.time-phase-percent {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 6px;
+}
+
+.pause-time-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff9800;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.pause-time-btn:hover {
+    background: #f57c00;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+}
+
+.pause-time-btn.paused {
+    background: #4caf50;
+}
+
+.pause-time-btn.paused:hover {
+    background: #45a049;
+}
+
+/* Rain Control */
+.rain-toggle-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background: #2a2a3e;
+    color: #ce93d8;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    min-height: 52px;
+}
+
+.rain-toggle-btn:hover {
+    background: #3a3a4e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.rain-toggle-btn.active {
+    background: #7b1fa2;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(123, 31, 162, 0.5);
+}
+
+.rain-toggle-btn.active:hover {
+    background: #8e24aa;
+    box-shadow: 0 6px 20px rgba(123, 31, 162, 0.6);
+}
+
+.rain-icon {
+    font-size: 24px;
+    display: inline-block;
+}
+
+.rain-intensity-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.rain-intensity-label {
+    color: #ffffff;
+    font-size: 15px;
+    min-width: 120px;
+}
+
+.rain-intensity-slider {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: #2a2a3e;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rain-intensity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1976d2;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.rain-intensity-slider::-webkit-slider-thumb:hover {
+    background: #1565c0;
+    transform: scale(1.1);
+}
+
+.rain-intensity-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1976d2;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.rain-intensity-slider::-moz-range-thumb:hover {
+    background: #1565c0;
+    transform: scale(1.1);
+}
+
+.rain-intensity-value {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Simulation Control */
+.pause-simulation-btn {
+    width: 100%;
+    padding: 14px;
+    background: #d32f2f;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.pause-simulation-btn:hover {
+    background: #c62828;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+
+.pause-simulation-btn.paused {
+    background: #4caf50;
+}
+
+.pause-simulation-btn.paused:hover {
+    background: #45a049;
+}
+
+.icon {
+    font-size: 18px;
+}
+
