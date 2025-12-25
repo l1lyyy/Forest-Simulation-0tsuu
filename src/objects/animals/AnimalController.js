@@ -70,7 +70,7 @@ export class AnimalController {
                 this.setState('wandering');
                 this.target = this.getValidWanderTarget();
                 this.targetObj = null;
-                console.log('State:', this.state, 'Target:', this.target);
+                //console.log('State:', this.state, 'Target:', this.target);
             }
             return;
         }
@@ -316,7 +316,7 @@ export class AnimalController {
             // Thêm growTimer nếu muốn, ví dụ:
             // growTimer: 80
         });
-        console.log('Newborn at', this.animal.position.clone().lerp(partner.position, 0.5));
+        //console.log('Newborn at', this.animal.position.clone().lerp(partner.position, 0.5));
     }
 
     moveTowards(target, delta) {
@@ -410,24 +410,24 @@ export class AnimalController {
             if (this.state === 'wandering') {
                 this.target = this.getValidWanderTarget();
                 this.targetObj = null;
-                console.log('Collision! Random new wander target:', this.target);
+                //console.log('Collision! Random new wander target:', this.target);
             } else if (this.state === 'seeking_water') {
                 // Nếu đang bị kẹt, random điểm tiếp cận quanh hồ
                 if (this.targetObj) {
                     this.target = this.getApproachPointAroundLake(this.targetObj);
-                    console.log('Collision! Approach lake from new direction:', this.target);
+                    //console.log('Collision! Approach lake from new direction:', this.target);
                 } else {
                     this.setSeekWaterTarget();
-                    console.log('Collision! Re-seek water, new target:', this.target);
+                    //console.log('Collision! Re-seek water, new target:', this.target);
                 }
             } else if (this.state === 'seeking_food') {
                 // Nếu đang bị kẹt, random điểm tiếp cận quanh cây
                 if (this.targetObj) {
                     this.target = this.getApproachPointAroundTree(this.targetObj);
-                    console.log('Collision! Approach tree from new direction:', this.target);
+                    //console.log('Collision! Approach tree from new direction:', this.target);
                 } else {
                     this.setSeekFoodTarget();
-                    console.log('Collision! Re-seek food, new target:', this.target);
+                    //console.log('Collision! Re-seek food, new target:', this.target);
                 }
             }
         }

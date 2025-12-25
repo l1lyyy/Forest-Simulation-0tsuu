@@ -28,7 +28,7 @@ export class AnimalView {
     }
 
     async loadModel() {
-        console.log('Start loading GLTF...');
+        //console.log('Start loading GLTF...');
         try {
             const gltf = await loadAnimalModel(import.meta.env.BASE_URL + 'data/low_poly_deer/scene.gltf');
             console.log('GLTF animation names:', gltf.animations.map(a => a.name));
@@ -41,7 +41,7 @@ export class AnimalView {
             const scale = this.animal.isAdult ? 1.5 : 0.8; // ví dụ: con non nhỏ hơn
             this.model.scale.set(scale, scale, scale);
             this.scene.add(this.model);
-            console.log('GLTF model loaded:', this.model);
+            //console.log('GLTF model loaded:', this.model);
 
             // --- Thêm bóng đơn giản ---
             const textureLoader = new THREE.TextureLoader();
@@ -66,7 +66,7 @@ export class AnimalView {
                 else if (clip.name.toLowerCase().includes('die')) this.animations['die'] = this.mixer.clipAction(clip);
             });
         } catch (err) {
-            console.error('GLTF load error:', err);
+            //console.error('GLTF load error:', err);
             if (!this.model) {
                 this.model = this.createFallbackModel();
                 this.scene.add(this.model);
@@ -192,7 +192,7 @@ export class AnimalView {
         else if (this.animal.state === 'drinking') anim = 'eat'; // dùng chung nếu chưa có animation riêng
         else if (this.animal.state === 'dead') anim = 'die';
         else if (this.animal.state === 'idle') anim = 'walk'; // vẫn dùng walk nhưng sẽ pause
-        console.log('Animal state:', this.animal.state, '→ play animation:', anim, '| currentAnim:', this.currentAnim);
+        //console.log('Animal state:', this.animal.state, '→ play animation:', anim, '| currentAnim:', this.currentAnim);
         this.playAnimation(anim);
 
         // Pause walk animation khi idle, resume khi không idle

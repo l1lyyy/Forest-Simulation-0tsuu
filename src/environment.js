@@ -107,7 +107,7 @@ export class Environment {
         }
 
         if (!valid) {
-            console.warn("Failed to find valid position for animal spawn after 1000 attempts.");
+            //console.warn("Failed to find valid position for animal spawn after 1000 attempts.");
             return;
         }
 
@@ -130,7 +130,7 @@ export class Environment {
             position: animal.position,
             radius: 0.5
         });
-        console.log("Total animals spawned:", this.animals.length);
+        //console.log("Total animals spawned:", this.animals.length);
     }
 
     // Sets up the main scene
